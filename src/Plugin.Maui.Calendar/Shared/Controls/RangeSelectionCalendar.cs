@@ -1,9 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
 using Plugin.Maui.Calendar.Controls.SelectionEngines;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace Plugin.Maui.Calendar.Controls;
 
-[XamlCompilation(XamlCompilationOptions.Compile)]
 public class RangeSelectionCalendar : Calendar
 {
     /// <summary> Bindable property for StartDate </summary>
