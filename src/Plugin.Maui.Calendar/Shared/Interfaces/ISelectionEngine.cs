@@ -41,6 +41,12 @@ namespace Plugin.Maui.Calendar.Controls.Interfaces
         /// Method to selectedDates when changed from code
         /// </summary>
         /// <param name="datesToSelect"></param>
-        void UpdateDateSelection(List<DateTime> datesToSelect);
+        void UpdateDateSelection(List<DateTime>? datesToSelect);
+
+        /// <summary>
+        /// Internal method to clear selectedDates when changed from code
+        /// </summary>
+        /// <param name="datesToSelect"></param>
+        void ClearSelection();
     }
 }

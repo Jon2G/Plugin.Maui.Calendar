@@ -30,12 +30,17 @@ public class MultiSelectionEngine : ISelectionEngine
 
     public bool TryGetSelectedEvents(EventCollection allEvents, out ICollection selectedEvents)
     {
+        if(_selectedDates is null)
+        {
+            selectedEvents = null;
+            return false;
+        }
         return allEvents.TryGetValues(_selectedDates, out selectedEvents);
     }
 
     public bool IsDateSelected(DateTime dateToCheck)
     {
-        return _selectedDates.Contains(dateToCheck);
+        return _selectedDates?.Contains(dateToCheck)??false;
     }
 
     public List<DateTime> PerformDateSelection(
@@ -54,6 +59,10 @@ public class MultiSelectionEngine : ISelectionEngine
         return [.. _selectedDates];
     }
 
+    public void ClearSelection()
+    {
+        _selectedDates.Clear();
+    }
     public void UpdateDateSelection(List<DateTime>? datesToSelect)
     {
         datesToSelect?.ForEach(date => _selectedDates.Add(date));

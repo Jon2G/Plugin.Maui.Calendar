@@ -128,4 +128,9 @@ internal class RangedSelectionEngine : ISelectionEngine
         else
             _rangeSelectionEndDate = newSelected.Value.Date;
     }
+    void ISelectionEngine.ClearSelection()
+    {
+        _rangeSelectionStartDate = null;
+        _rangeSelectionEndDate = null;
+    }
 }

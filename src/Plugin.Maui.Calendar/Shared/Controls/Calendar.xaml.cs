@@ -1884,6 +1884,7 @@ public partial class Calendar : ContentView
     public void ClearSelection()
     {
         _isSelectingDates = false;
+        this.monthDaysView.CurrentSelectionEngine.ClearSelection();
         this.SelectedDates = null;
         this.SelectedDate = null;
     }

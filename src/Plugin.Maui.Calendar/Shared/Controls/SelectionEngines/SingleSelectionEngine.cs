@@ -66,4 +66,8 @@ internal class SingleSelectionEngine : ISelectionEngine
     {
         _selectedDate = dateToSelect;
     }
+    public void ClearSelection()
+    {
+        SelectSingleDate(null);
+    }
 }
